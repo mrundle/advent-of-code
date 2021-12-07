@@ -1,3 +1,5 @@
+import os
+
 def read_input(input_file, keep_empty=False):
     lines = []
     with open(input_file) as f:
@@ -7,3 +9,7 @@ def read_input(input_file, keep_empty=False):
                 continue
             lines.append(line)
     return lines
+
+def debug_print(msg):
+    if os.getenv('DEBUG'):
+        print(msg if msg else '')
