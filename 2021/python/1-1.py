@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # https://adventofcode.com/2021/day/1
 
-INPUT_FILE = '1.txt'
+INPUT_FILE ='../input/1.txt'
 
 def file_to_ints(input_file):
     """

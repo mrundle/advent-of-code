@@ -3,7 +3,7 @@
 # Take a different approach. We don't need to track every fish,
 # we just need to track the total number belonging to each day.
 
-INPUT_FILE = '6.txt'
+INPUT_FILE ='../input/6.txt'
 N_DAYS = 256
 
 from common import read_input, debug_print

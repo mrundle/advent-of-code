@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # https://adventofcode.com/2021/day/2#part2
 
-INPUT_FILE = '2.txt'
+INPUT_FILE ='../input/2.txt'
 
 def parse_file(input_file):
     """

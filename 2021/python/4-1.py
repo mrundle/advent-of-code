@@ -1,21 +1,15 @@
 #!/usr/bin/env python
-# https://adventofcode.com/2021/day/4#part2
+# https://adventofcode.com/2021/day/4
 # Pretty inefficient. Just brute force.
 
 from common import read_input
 
-INPUT_FILE = '4.txt'
+INPUT_FILE ='../input/4.txt'
 
 BOARD_SIZE = 5
-DEBUG_PRINT = False
-
-def debug_print(msg=None):
-    if DEBUG_PRINT:
-        print(msg if msg else '')
 
 class Board():
     def __init__(self, board):
-        self.bingo = False
         self.size = len(board)
         assert self.size == BOARD_SIZE
         for line in board:
@@ -30,26 +24,22 @@ class Board():
                     self.board_hits[i][j] = True
                     return
 
-    def debug_print(self):
-        debug_print()
+    def print(self):
+        print()
         for i in range(self.size):
             hits = ' '.join(['1' if x else '0' for x in self.board_hits[i]])
             values = ' '.join([str(x).ljust(3) for x in self.board_values[i]])
-            debug_print(f'{hits}\t{values}')
-        debug_print()
+            print(f'{hits}\t{values}')
+        print()
 
-    def has_bingo(self):
-        if self.bingo:
-            return True
+    def bingo(self):
         # check horizontals and verticals
         for i in range(self.size):
             if all(self.board_hits[i]):
-                debug_print(f'horizontal hit: {self.board_values[i]}')
-                self.bingo = True
+                print(f'horizontal hit: {self.board_values[i]}')
                 return True
             if all([ row[i] for row in self.board_hits ]):
-                debug_print(f'vertical hit: {[row[i] for row in self.board_values]}')
-                self.bingo = True
+                print(f'vertical hit: {[row[i] for row in self.board_values]}')
                 return True
 
     def sum_unmarked(self):
@@ -59,6 +49,7 @@ class Board():
                 if not self.board_hits[i][j]:
                     value += int(self.board_values[i][j])
         return value
+
 
 def parse_input(input_file):
     lines = read_input(input_file, keep_empty=True)
@@ -84,14 +75,10 @@ def main():
     numbers, boards = parse_input(INPUT_FILE)
     for number in numbers:
         for board in boards:
-            if board.has_bingo():
-                continue
             board.mark(number)
-            if board.has_bingo():
-                board.debug_print()
-                if len(boards) == 1:
-                    return board.sum_unmarked() * number
-        boards = [ board for board in boards if not board.has_bingo() ]
+            if board.bingo():
+                board.print()
+                return board.sum_unmarked() * number
 
 if __name__ == '__main__':
     result = main()

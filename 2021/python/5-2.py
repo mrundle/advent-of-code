@@ -4,7 +4,7 @@
 
 from common import read_input, debug_print
 
-INPUT_FILE = '5.txt'
+INPUT_FILE ='../input/5.txt'
 
 def parse_input(input_file):
     max_index = 0

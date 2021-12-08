@@ -2,7 +2,7 @@
 # https://adventofcode.com/2021/day/3#part2
 # This one was just off the wall
 
-INPUT_FILE = '3.txt'
+INPUT_FILE ='../input/3.txt'
 
 def parse_file(input_file):
     """

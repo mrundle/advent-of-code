@@ -7,7 +7,7 @@
 # neat to continue using the generator approach with sliding windows,
 # but I can't immediately think of a clean way to do that.
 
-INPUT_FILE = '1.txt'
+INPUT_FILE ='../input/1.txt'
 WINDOW = 3
 
 def file_to_ints(input_file):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # https://adventofcode.com/2021/day/6
 
-INPUT_FILE = '6.txt'
+INPUT_FILE ='../input/6.txt'
 N_DAYS = 80
 
 from common import read_input, debug_print

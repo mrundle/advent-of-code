@@ -3,7 +3,7 @@
 
 from common import read_input
 
-INPUT_FILE = '7.txt'
+INPUT_FILE ='../input/7.txt'
 
 def parse_input(input_file):
     lines = read_input(input_file)
