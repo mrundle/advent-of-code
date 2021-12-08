@@ -3,7 +3,6 @@
 # Probably some smarter way, but I'm going 2D array
 
 from common import read_input, debug_print
-import re
 
 INPUT_FILE = '5.txt'
 
@@ -43,8 +42,12 @@ def build_grid(lines, max_index):
                 grid[y][x] += 1
             msg += 'horizontal'
         else:
-            pass # neither horizontal or vertical
-            msg += 'none'
+            x_vals = get_range(src[0], dst[0])
+            y_vals = get_range(src[1], dst[1])
+            msg += 'diagonal'
+            for i in range(len(x_vals)):
+                grid[y_vals[i]][x_vals[i]] += 1
+                msg += f' ({y_vals[i]}, {x_vals[i]})'
         debug_print(msg)
     return grid
 
