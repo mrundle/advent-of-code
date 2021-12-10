@@ -5,7 +5,7 @@ import json
 
 from common import read_input, debug_print
 
-INPUT_FILE = '8.txt'
+INPUT_FILE = '../input/8.txt'
 
 def parse_line(line):
     signals, output = line.split('|')

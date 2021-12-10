@@ -3,7 +3,7 @@
 
 from common import read_input
 
-FILE = '9.txt'
+FILE = '../input/9.txt'
 
 def parse_input(filepath):
     return [ [ int(char) for char in line ] for line in read_input(filepath) ]
