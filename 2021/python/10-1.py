@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# https://adventofcode.com/2021/day/10
 
 from common import read_input
 
